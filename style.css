@@ -1,0 +1,437 @@
+.texto{
+    font-size: x-large;
+    text-align: center;
+    color: aqua;
+    border: 10px;
+
+}
+.texto:hover{
+    opacity: 0.5;
+    
+}
+.fundo{
+    background-color: black;
+}
+.container{
+    display:grid;
+    justify-content: center;
+    align-self: center;
+}
+.img2{
+    opacity: 0.7;
+    width: 100%;
+    max-width: 300px;
+    background-image: linear-gradient(black);
+
+}
+.img1{
+    width: 100%;
+    max-width: 300px;
+}
+body {
+  background: #0b0b0b;
+  font-family: "Changa One", sans-serif;
+  position: relative;background:
+      linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+      url("img/fundo1.png");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Container */
+.botoes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 50px;
+  margin-top: -50px;
+  max-width: 500px;   /* trava o tamanho */
+  margin: 0 auto;     /* centraliza */
+}
+
+/* Botão base */
+.btn {
+  text-decoration: none;
+  text-align: center;
+  padding: 18px;
+  font-size: 25px;
+  font-weight: bold;
+  border-radius: 14px;
+  letter-spacing: 1px;
+  width: 100%;
+  max-width: 500px;
+}
+
+
+/* 🍺 Cardápio (amarelo neon) */
+.lanche {
+  background: linear-gradient(45deg, #e1b505, #ff8c00);
+  color: #000;
+  box-shadow: 0 0 10px #ffcc00, 0 0 25px #ff9900;
+  position: relative;
+ 
+}
+
+/* 🧾 Pedidos (dark com neon) */
+.drink {
+  background: #111;
+  color: #ffcc00;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 10px #ffcc00;
+}
+.combo {
+  background: linear-gradient(45deg, #d8ae02, #e67f02);
+  color: #000;
+  box-shadow: 0 0 10px #ffcc00, 0 0 25px #ff9900;
+}
+.doce {
+  background: #111;
+  color: #ffcc00;
+  border: 2px solid #ffcc00;
+  box-shadow: 0 0 10px #ffcc00;
+}
+.batata {
+  background: linear-gradient(45deg, #ae8c01, #bb6803);
+  color: #000;
+  box-shadow: 0 0 10px #ffcc00, 0 0 25px #ff9900;
+}
+/* Hover geral */
+.btn:hover {
+  transform: scale(1.07);
+}
+
+/* efeito pressionar */
+.btn:active {
+  transform: scale(0.98);
+}
+.html {
+    scroll-behavior: smooth;
+}
+/*aqui o menu de cada item */
+
+.menu {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  
+}
+.menu.ativo {
+  max-height: 1600px;
+  color: aliceblue;
+  display: grid;
+  border: #ae8c01 solid;
+  gap: 10px;
+  margin-top: -10px;
+  
+  border-radius: 2%;
+  box-shadow: 0 0 3px #ffcc00, 0 0 15px #ff9900;
+  padding: 20px;
+  max-width: 400px;
+}
+.cardapio p{
+  font-family: sans-serif;
+  color: rgb(215, 215, 215);
+}
+
+.imgburguer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  box-shadow: 0 0 10px #f3f3f2, 0 0 25px #eae8e6;
+  max-width: 110px;
+  border-radius: 10px;
+  
+}
+.imgburguer:hover {
+  transform: scale(1.10);
+  opacity: 0.5;
+}
+.cardapio {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  justify-content: center;
+
+}
+.cardapio h2 {
+  margin-top: -7px;
+  letter-spacing: 2px;
+  margin-bottom: 5px;
+}
+.cardapio p {
+  display: flex;
+  margin: 0;
+  font-size: 14px;
+  justify-content: space-between;
+  margin-top: -5px;
+  letter-spacing: 2%;
+  margin-bottom: 10px;
+  line-height: 1.3;
+
+}
+.btnitem p {
+  font-size:20px;
+}
+
+.carrinho {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: linear-gradient(45deg, #e1b505, #ff8c00);
+  padding: 12px;
+  text-align: center;
+  box-shadow: 0 0 10px #ffcc00, 0 0 25px #ff9900;
+  z-index: 999;
+}
+.footer {
+  background: none;
+  border: none;
+  font-family: "Changa One", sans-serif;
+  font-size: 20px;
+  cursor: pointer;
+}
+button {
+  border: none;
+}
+.btnitem {
+  border: none;
+  cursor: pointer;
+  width: auto;
+  height: auto;
+  padding: 0;
+  border-radius:30%;
+}
+.btnitem img {
+
+  display: block;
+  object-fit: contain;
+  width: 30px;
+  height: 30px;
+  margin-top: -10px;
+  border-radius: 30%;
+}
+.btnitem:hover {
+  transform: scale(1.1);
+  transition: 0.2s;
+}
+.imgdrink {
+  display: block;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 80px;
+  
+  
+  
+}
+.imgdrink:hover {
+  transform: scale(1.10);
+  opacity: 0.5;
+}
+.imgdrinkcrn {
+  margin-left: 20px;
+}
+.caixafinal {
+  color: white;
+  padding: 20px;
+  border-radius: 12px;
+  border: #ffcc00 solid;
+  max-width: 350px;
+  width: 90%;
+  max-height: 80vh;
+  overflow: auto;
+  background: #111;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  
+}
+
+.caixafinal p{
+  margin-top: 30px;
+  font-size: large;
+}
+
+
+
+.caixafinal h3 {
+  margin-top: -5px;
+  letter-spacing: 1px;
+  text-align: center;
+  font-size:x-large;
+}
+.caixafinal input {
+  border-radius: 5%;
+  border: none;
+  padding: 6px;
+  margin: 5px;
+  
+}
+.caixafinal label {
+  gap: 10px;
+  display: flex; 
+}
+.enviar {
+  border: none;
+  border-radius: 5px;
+  background-color: #ffcc00;
+  font-size:large;
+  font-weight: bolder;
+  gap: 10px;
+  padding: 15px;
+  cursor: pointer;
+
+}
+.enviar:hover{
+  background: green;
+}
+.caixafinal label{
+  padding: 5px;
+  border: none;
+  gap: 5px;
+  color: #ffcc00;
+  max-width: 15px;
+  margin-top: -5px;
+}
+
+.caixafinal span{
+  font-size: large;
+  color: #ffcc00;
+}
+
+.fecharped {
+  font-size:small;
+  font-weight: bolder;
+  background-color: #ff9900;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+#cartmodal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.cartitems p{
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 80vh;
+}
+.cartitems button{
+  background: #ffcc00;
+  border-radius: 8%;
+  font-weight: bold;
+}
+.precobtn {
+  font-size: 20px;
+  letter-spacing: 1px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #f3f3f2;
+
+}
+
+.remove-btn {
+  cursor: pointer;
+}
+.btncarf {
+  font-family: sans-serif;
+}
+.imgdoce{
+  max-width: 120px;
+}
+
+@media (min-width: 768px) {
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 20px;
+  }
+
+  .img1,
+  .img2 {
+    max-width: 220px;
+    width: 100%;
+    object-fit: contain;
+  }
+
+  /* botões em linha */
+  .botoes {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+    gap: 15px;
+    max-width: 1100px;
+    margin: 10px auto;
+    padding: 20px;
+  }
+
+  .btn {
+    width: auto;
+    min-width: 220px;
+    padding: 18px 30px;
+    font-size: 22px;
+  }
+
+  /* menu em grade */
+  .menu.ativo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+    max-width: 1000px;
+    margin: 20px auto;
+  }
+
+  .imgburguer,
+  .imgdrink,
+  .imgdoce {
+    max-width: 140px;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 0 12px rgba(255,255,255,0.15);
+    transition: 0.3s;
+  }
+
+  /* faixa visual inferior */
+  body::after {
+    content: "";
+    display: block;
+    height: 180px;
+    margin-top: 40px;
+    background: linear-gradient(to top, rgba(255,140,0,0.08), transparent);
+  }
+}
+
+
+.hidden {
+  display: none;
+}
+#address-warn {
+  font-family: Arial, sans-serif; /* fonte */
+  text-align: center;             /* alinhamento */
+  color: red;
+}
+
+.rodapevisual {
+  margin-top: 80px;
+  text-align: center;
+  color: #ffcc00;
+  padding: 50px 20px;
+  font-size: 22px;
+}
