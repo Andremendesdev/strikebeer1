@@ -21,7 +21,8 @@
     opacity: 0.7;
     width: 100%;
     max-width: 300px;
-    background-image: linear-gradient(black);
+    -webkit-mask-image: radial-gradient(circle, black 70%, transparent 100%);
+    mask-image: radial-gradient(circle, black 70%, transparent 100%);
 
 }
 .img1{
@@ -30,7 +31,9 @@
 }
 body {
   background: #0b0b0b;
-  font-family: "Changa One", sans-serif;
+  font-family:'Courier New', Courier, monospace;
+  font-size: large;
+  font-weight: bold;
   position: relative;background:
       linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
       url("img/fundo1.png");
@@ -46,9 +49,9 @@ body {
   flex-direction: column;
   gap: 10px;
   padding: 50px;
-  margin-top: -50px;
   max-width: 500px;   /* trava o tamanho */
-  margin: 0 auto;     /* centraliza */
+  margin: -30px 0;     /* centraliza */
+  
 }
 
 /* Botão base */
@@ -133,6 +136,7 @@ body {
 .cardapio p{
   font-family: sans-serif;
   color: rgb(215, 215, 215);
+
 }
 
 .imgburguer {
@@ -156,7 +160,7 @@ body {
 
 }
 .cardapio h2 {
-  margin-top: -7px;
+  margin: 0;
   letter-spacing: 2px;
   margin-bottom: 5px;
 }
@@ -353,6 +357,7 @@ button {
 }
 
 @media (min-width: 768px) {
+  
 
   .container {
     display: flex;
@@ -364,9 +369,11 @@ button {
 
   .img1,
   .img2 {
-    max-width: 220px;
+    max-width: 400px;
     width: 100%;
     object-fit: contain;
+    -webkit-mask-image: radial-gradient(circle, black 70%, transparent 100%);
+    mask-image: radial-gradient(circle, black 70%, transparent 100%);
   }
 
   /* botões em linha */
@@ -434,4 +441,30 @@ button {
   color: #ffcc00;
   padding: 50px 20px;
   font-size: 22px;
+}
+.hourspan {
+  display: flex;
+  justify-content: center; /* centraliza horizontal */
+  align-items: center;     /* centraliza vertical (se tiver altura) */
+  margin: 2px 0;
+}
+
+.hour {
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid #22c55e; /* verde bonito */
+  color: whitesmoke;
+  padding: 8px 16px;
+  border-radius: 20px; /* deixa arredondado tipo badge */
+  font-weight: bold;
+  text-align: center;
+}
+.open {
+  border: 2px solid #22c55e;
+  color: #22c55e;
+}
+
+/* fechado */
+.closed {
+  border: 2px solid red;
+  color: red;
 }

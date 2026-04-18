@@ -159,7 +159,7 @@ botoes.forEach(botao => {
              let inpuValue = event.target.value;
 
              if(inpuValue !== ""){
-                addressInput.classList.remove("border")
+                addressWarn.classList.add("hidden")
              }
 
 
@@ -176,6 +176,19 @@ botoes.forEach(botao => {
           
         })
 
-            
-        
-        
+        function checkRestaurant(){
+            const data = new Date();
+            const hora = data.getHours();
+            return hora >= 18 && hora < 23;
+        }
+    
+    const hourSpan = document.getElementById("hour-span")
+    const isOpen = checkRestaurant();
+
+    if(isOpen){
+        hourSpan.classList.remove("closed")
+        hourSpan.classList.add("open")
+    }else{
+        hourSpan.classList.remove("open")
+        hourSpan.classList.add("closed")
+    }
