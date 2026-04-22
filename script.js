@@ -12,6 +12,8 @@ const quantPed = document.getElementById("quantped")
 const addressInput = document.getElementById("address")
 const nameInput = document.getElementById("name")
 const cpfInput = document.getElementById("cpf")
+const nameWarn = document.getElementById("name-warn")
+const cpfWarn = document.getElementById("cpf-warn")
 const addressWarn = document.getElementById("address-warn")
 const checkoutBtn = document.getElementById("checkout-btn")
 
@@ -155,24 +157,74 @@ botoes.forEach(botao => {
             }
         }
 
-        addressInput.addEventListener("input", function(event){
-             let inpuValue = event.target.value;
+        nameInput.addEventListener("input", function(event){
+            let inputValue = event.target.value;
 
-             if(inpuValue !== ""){
+            if(inputValue !== ""){
+                nameWarn.classList.add("hidden")
+            }
+
+        })
+
+        cpfInput.addEventListener("input", function(event){
+            let inputValue = event.target.value;
+
+            if(inputValue !== ""){
+                cpfWarn.classList.add("hidden")
+            }
+
+        })
+
+        addressInput.addEventListener("input", function(event){
+             let inputValue = event.target.value;
+
+             if(inputValue !== ""){
                 addressWarn.classList.add("hidden")
              }
 
+         })
 
 
-            })
            
         checkoutBtn.addEventListener("click", function() {
+            const isOpen = checkRestaurant();
+            if(!isOpen){
+                Toastify({
+                    text: "Ops fechado no momento",
+                    duration: 3000,
+                    destination: "https://github.com/apvarun/toastify-js",
+                    newWindow: true,
+                    close: true,
+                    gravity: "top", // `top` or `bottom`
+                    position: "right", // `left`, `center` or `right`
+                    stopOnFocus: true, // Prevents dismissing of toast on hover
+                    style: {
+                    background: "linear-gradient(to right, #e8f536, #ffc905)",
+                    },
+                }).showToast();
+
+                return;
+            }
+
             if (cart.length === 0) return;
+
+            if(nameInput.value.trim() === ""){
+                nameWarn.classList.remove("hidden")
+                return;
+            }
+            
+            if(cpfInput.value.trim() === ""){
+                cpfWarn.classList.remove("hidden")
+                return;
+            }
 
             if(addressInput.value.trim() === ""){
                 addressWarn.classList.remove("hidden")
                 return;  
           } 
+          
+          enviarpedido();
+        
           
         })
 
@@ -191,4 +243,26 @@ botoes.forEach(botao => {
     }else{
         hourSpan.classList.remove("open")
         hourSpan.classList.add("closed")
+    }
+    
+    const numero = "14997406757" 
+    function enviarpedido() {
+        let mensagem = "🛒 *Pedido*\n\n";
+        
+        cart.forEach(item => {
+            mensagem += `${item.name} - R$ ${item.price.toFixed(2)} - QTF: ${item.quantity}\n`;
+        });
+        mensagem += "\n👤 Nome: " + nameInput.value;
+        mensagem += "\n🧾 CPF: " + cpfInput.value;
+        mensagem += "\n📍 Endereço: " + addressInput.value;
+        mensagem += `\n💰 Pagamento: ${pagamento.value}`;
+
+        const mensagemFormatada = encodeURIComponent(mensagem);
+
+        const link = `https://wa.me/${numero}?text=${mensagemFormatada}`;
+        window.open(link, "_blank");
+
+        cart.length = 0;
+        updatecartmodal();
+
     }

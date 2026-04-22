@@ -4,12 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:type" content="website"/>
+    <meta property="og:title" content="strike beer - melhor hamburguer de Piraju!">
+    <meta property="og:description" content="melhor hamburguer da região!">
+    <meta property="og:site_name" content="StrikeBeer">
+
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Changa+One:ital@0;1&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Strike Beer</title>
 </head>
 
 <body class="fundo">
@@ -78,7 +85,7 @@ Obs.: Acompanha maionese de alho</p>
          <hr>
         </div>
      </div>
-        <img src="img/corona.png" class="imgdrinkcrn" width="50px">
+        <img src="img/corona.png" class="imgdrink">
              <div class="cardapio">   
               <h2>CORONA</h2>
               <p>Cerveja Corona gelada, com sabor leve e refrescante, perfeita para momentos de descontração.</p>
@@ -168,9 +175,11 @@ Obs.: Acompanha maionese de alho</p>
 
 <!-- Troco (aparece só se for dinheiro) -->
         <input type="text" id="troco" placeholder="Troco para quanto?" style="display:none;">
-
+            <div id="name-warn" class="hidden"><p>Digite seu Nome completo!</p></div>
+            <div id="cpf-warn" class="hidden"><p>Digite seu CPF completo!</p></div>
+            <div id="address-warn" class="hidden"><p>Digite seu endereço completo!</p></div>
             <button class="enviar" id="checkout-btn"> Enviar Pedido</button>
-            <div id="address-warn" class="hidden"><p>Digite seu endereo completo!</p></div>
+    
             <button id="close-modal" class="fecharped">X</button>
             </div>
         </section>
@@ -179,7 +188,7 @@ Obs.: Acompanha maionese de alho</p>
             <h2>🍔 Strike Beer</h2>
             <p>O melhor hambúrguer da cidade, feito com paixão.</p>
         </footer>
-    
+      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
       <script src="script.js"></script>
 </body>
 
