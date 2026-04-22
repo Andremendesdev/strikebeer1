@@ -35,10 +35,18 @@ botoes.forEach(botao => {
 
         // se não estava aberto, abre
         if (!jaAtivo) {
+            const scrollY = window.scrollY;
             menu.classList.add("ativo")
             botao.classList.add("ativo")
+
+            window.scrollTo(0, scrollY);
+
+            menu.scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+            });
         }
-        updatecartmodal()
+        //updatecartmodal()
     })
 })
     btncar.addEventListener("click", ()=> {

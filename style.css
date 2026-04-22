@@ -34,12 +34,12 @@ body {
   font-size: large;
   font-weight: bold;
   position: relative;background:
-      linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-      url("img/fundo1.png");
-
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+  linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+  url("img/fundo1.png");
+  margin: 0;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /* Container */
@@ -74,6 +74,9 @@ body {
   box-shadow: 0 0 10px #ffcc00, 0 0 25px #ff9900;
   position: relative;
  
+}
+html {
+  scroll-behavior: smooth;
 }
 
 /* 🧾 Pedidos (dark com neon) */
@@ -120,14 +123,14 @@ body {
   
 }
 .menu.ativo {
-  max-height: 1600px;
+  max-height: 1500px;
   color: aliceblue;
   display: grid;
   border: #ae8c01 solid;
   gap: 10px;
   margin-top: -10px;
-  
-  border-radius: 2%;
+  transition: max-height 0.3s ease;
+  border-radius: 10px;
   box-shadow: 0 0 3px #ffcc00, 0 0 15px #ff9900;
   padding: 20px;
   max-width: 400px;
@@ -181,7 +184,8 @@ body {
 .carrinho {
   position: fixed;
   bottom: 0;
-  width: 100%;
+  right: 0;
+  left: 0;
   background: linear-gradient(45deg, #e1b505, #ff8c00);
   padding: 12px;
   text-align: center;
@@ -512,4 +516,6 @@ button {
 }
 .rodapevisual{
   margin-top: -20px;
+  text-align: center;
+  
 }
